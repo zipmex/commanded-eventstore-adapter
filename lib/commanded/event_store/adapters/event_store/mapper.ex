@@ -3,6 +3,7 @@ defmodule Commanded.EventStore.Adapters.EventStore.Mapper do
 
   def to_event_data(%Commanded.EventStore.EventData{} = event_data) do
     %Commanded.EventStore.EventData{
+      event_id: event_id,
       causation_id: causation_id,
       correlation_id: correlation_id,
       event_type: event_type,
@@ -11,6 +12,7 @@ defmodule Commanded.EventStore.Adapters.EventStore.Mapper do
     } = event_data
 
     %EventStore.EventData{
+      event_id: event_id,
       causation_id: causation_id,
       correlation_id: correlation_id,
       event_type: event_type,

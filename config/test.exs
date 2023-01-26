@@ -1,9 +1,4 @@
-use Mix.Config
-
-# Print only warnings and errors during test
-config :logger, :console, level: :warn, format: "[$level] $message\n"
-
-config :ex_unit, capture_log: true
+import Config
 
 config :commanded,
   assert_receive_event_timeout: 1_000,
@@ -17,5 +12,10 @@ config :commanded_eventstore_adapter, TestEventStore,
   password: "postgres",
   database: "eventstore_test",
   hostname: "localhost",
-  pool_size: 1,
+  pool_size: 5,
   pool_overflow: 0
+
+config :ex_unit, capture_log: true
+
+# Print only warnings and errors during test
+config :logger, :console, level: :warn, format: "[$level] $message\n"

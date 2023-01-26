@@ -39,8 +39,8 @@ defmodule Commanded.EventStore.Adapters.EventStore.Mixfile do
 
   defp deps do
     [
-      {:commanded, "~> 1.4"},
-      {:eventstore, "~> 1.3"},
+      {:commanded, github: "zipmex/commanded", tag: "zmv1.1.0"},
+      {:eventstore, "~> 1.4"},
 
       # Optional dependencies
       {:jason, "~> 1.3", optional: true},
